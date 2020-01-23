@@ -126,8 +126,52 @@ Route::get ('tni/{nama?}/{beratbadan?}/{umur?} ', function ($a=null,$b=null,$c=n
     }
 });
 
+//akses model post
+Route::get('testmodel1',function()
+{
+    $query = App\pot::all();
+    return $query;
+
+});
+
+//mencari berdasarkan id
+Route::get('testmodel2',function()
+{
+    $query = App\pot::find(1);
+    return $query;
+});
+
+//mencari berdasarkan tiitle
+    Route::get('testmodel3',function()
+    {
+    $query = App\pot::where('title','like','%cepat nikah%')->get();
+    });
 
 
+//mengubah record
+    Route::get('testmodel4',function()
+    {
+    $query = $pot = App\pot::find(1);
+    $pot->title = "Ciri Keluarga Sakinah";
+    $pot->save();
+    return $pot;
+    });
 
 
+    //menghapus
+    Route::get('testmodel5',function()
+    {
+    $query = $pot = App\pot::find(1);
+    $pot->delete();
+    });
 
+
+    //menambah
+    Route::get('testmodel6',function()
+    {
+    $query = $pot = new App\pot;
+    $pot->title = "7 Amalan Pembuka Jodoh";
+    $pot->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+    $pot->save();
+    return $pot;
+    });
