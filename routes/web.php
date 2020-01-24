@@ -175,3 +175,29 @@ Route::get('testmodel2',function()
     $pot->save();
     return $pot;
     });
+
+
+    //tugas
+    Route::get('produk',function()
+    {
+        $data = App\produk::all()
+        ->take(3);
+        return $data;
+    });
+    Route::get('produk/select',function()
+{
+    $data =App\produk::select('KategoriProduk','NamaProduk','JenisProduk')->first();
+    return $data;
+});
+    Route::get('produk/{KategoriProduk}/{NamaProduk}/{JenisProduk}/{Jumlah}/{HargaProduk}/{Kualitas}/{Alamat}',function($KategoriProduk,$NamaProduk,$JenisProduk,$Jumlah,$HargaProduk,$Kualitas,$Alamat){
+    $produk = new App\produk;
+    $produk->KategoriProduk = $KategoriProduk;
+    $produk->NamaProduk = $NamaProduk;
+    $produk->JenisProduk = $JenisProduk;
+    $produk->Jumlah = $Jumlah;
+    $produk->HargaProduk = $HargaProduk;
+    $produk->Kualitas = $Kualitas;
+    $produk->Alamat = $Alamat;
+    $produk->save();
+    return $produk;
+    });
