@@ -201,3 +201,17 @@ Route::get('testmodel2',function()
     $produk->save();
     return $produk;
     });
+
+
+//Controller
+    Route::get('latihan','LatihanController@halo');
+    Route::get('tambah','LatihanController@tambah');
+    Route::get('kurang','LatihanController@kurang');
+    Route::get('kali','LatihanController@kali');
+    Route::get('bagi','LatihanController@bagi');
+    Route::get('param','LatihanController@param');
+    Route::get('data-1','LatihanController@loop');
+    Route::get('data-1','LatihanController@loop2');
+
+
+
