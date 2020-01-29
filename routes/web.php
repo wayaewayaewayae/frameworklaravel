@@ -211,7 +211,18 @@ Route::get('testmodel2',function()
     Route::get('bagi','LatihanController@bagi');
     Route::get('param','LatihanController@param');
     Route::get('data-1','LatihanController@loop');
-    Route::get('data-1','LatihanController@loop2');
+    Route::get('karyawan','LatihanController@gaji');
 
+//Route TABUNGAN
+Route::get('tabungan','TabunganController@index');
+Route::get('tabungan/{id?}','TabunganController@show');
+Route::get('tabungan-tambah/{nis}/{nama}/{kelas}/{jml}','TabunganController@store');
+Route::get('tabungan-edit/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController@update');
+Route::get('tabungan-delete/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController@delete');
 
-
+//Route Costumer
+Route::get('costumer','CostumerController@index');
+Route::get('costumer/{id?}','CostumerController@show');
+Route::get('costumer-tambah/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@store');
+Route::get('costumer-edit/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@update');
+Route::get('costumer-delete/{id}/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@delete');
