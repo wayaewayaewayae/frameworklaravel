@@ -222,7 +222,13 @@ Route::get('tabungan-delete/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController
 
 //Route Costumer
 Route::get('costumer','CostumerController@index');
-Route::get('costumer/{id?}','CostumerController@show');
+Route::get('costumer-1/{id?}','CostumerController@show');
 Route::get('costumer-tambah/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@store');
 Route::get('costumer-edit/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@update');
 Route::get('costumer-delete/{id}/{code}/{nama}/{email}/{country}/{city}/{address}/{contact}','CostumerController@delete');
+
+
+//Passing Data
+Route::get('pass','PracticeController@pass');
+Route::get('pass-2','PracticeController@pass2');
+Route::get('pass-3','PracticeController@pass3');
