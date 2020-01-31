@@ -231,4 +231,9 @@ Route::get('costumer-delete/{id}/{code}/{nama}/{email}/{country}/{city}/{address
 //Passing Data
 Route::get('pass','PracticeController@pass');
 Route::get('pass-2','PracticeController@pass2');
-Route::get('pass-3','PracticeController@pass3');
+Route::get('pass-tabungan','PracticeController@passtabungan');
+
+Route::get('pass-tabungan/{id}','PracticeController@pass3');
+
+Route::get('barang1','BarangController@barang');
+

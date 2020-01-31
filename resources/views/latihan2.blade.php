@@ -8,7 +8,7 @@
 </head>
 <body>
     <center>Daftar Tabungan</center>
-    @@foreach ($tabungan as $data)
+    @foreach ($tabungan as $data)
     Nama : {{$data->$Nama}}<br>
     nis : {{$data->$nis}}
     @endforeach

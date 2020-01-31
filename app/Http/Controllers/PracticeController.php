@@ -19,12 +19,13 @@ class PracticeController extends Controller
             ['nama'=>'santia','kelas'=>'XI-rpl-1'],
             ['nama'=>'jul','kelas'=>'XI-rpl-1']
         ];
-        return view('latihan1',['data'=>$siswa]);
+
+        return view('latihan2',['data'=>$siswa]);
     }
 
-        public function pass3()
+        public function pass3($id)
         {
-            $tabungan = Tabungan::all()->take(10);
-            return view('latihan2',compact('tabungan'));
+            $tabungan = Tabungan::findOrFail($id);
+            return view('latihan3',compact('tabungan'));
         }
     }
